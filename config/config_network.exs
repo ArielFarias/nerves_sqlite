@@ -13,8 +13,8 @@ config :nerves_firmware_ssh,
 config :nerves_init_gadget,
   ifname: "wlan0",
   address_method: :dhcpd,
-  mdns_domain: "hello_nerves.local",
-  node_name: :hello_nerves,
+  mdns_domain: "nerves.local",
+  node_name: :nerves,
   node_host: :mdns_domain,
   ssh_console_port: 22
 
