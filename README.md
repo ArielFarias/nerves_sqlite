@@ -81,8 +81,9 @@ Then run in terminal `./script.sh`
   Inside Raspbery Pi terminal you can try to insert and read a Weather record as:
   ```elixir
   iex(nerves@nerves.local)1> alias FirmwareDb.Repo
-  Repo
+
   iex(nerves@nerves.local)2> %Weather{city: "New York", temp_lo: 10, temp_hi: 23, prcp: 0.25} |> Repo.insert
+
   00:16:53.951 [debug] QUERY OK db=22.8ms decode=0.1ms queue=0.2ms
   INSERT INTO "weather" ("city","prcp","temp_hi","temp_lo") VALUES (?1,?2,?3,?4) ;--RETURNING ON INSERT "weather","id" ["New York", 0.25, 23, 10]
   {:ok,
@@ -94,7 +95,9 @@ Then run in terminal `./script.sh`
     temp_hi: 23,
     temp_lo: 10
   }}
+  
   iex(nerves@nerves.local)3> Repo.all Weather
+
   00:18:59.957 [debug] QUERY OK source="weather" db=5.4ms decode=0.2ms queue=0.2ms
   SELECT w0."id", w0."city", w0."temp_lo", w0."temp_hi", w0."prcp" FROM "weather" AS w0 []
   [
