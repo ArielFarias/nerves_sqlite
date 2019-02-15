@@ -64,7 +64,7 @@ To start your Nerves app run these commands on a terminal with the microSD stora
 In order to burn the firmware over-the-air you need to burn the project a first-time as descripted in https://github.com/ArielFarias/nerves_sqlite#getting-started.
 
 I recommend to create a file as script.sh in root folder of your project to execute all this steps:
-    ```
+    ```bash
     export NERVES_NETWORK_SSID=your_network_SSID
     export NERVES_NETWORK_PSK=your_network_password
     export MIX_TARGET=rpi3
@@ -107,8 +107,8 @@ Then run in terminal `./script.sh`
       temp_lo: 10
       }
     ]
-  ```
-  
+    ```
+
 ## Learn more
 
   * Official docs: https://hexdocs.pm/nerves/getting-started.html
