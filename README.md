@@ -43,7 +43,7 @@ To start your Nerves app run these commands on a terminal with the microSD stora
   ```
   If you receive `nil` try out this https://github.com/nerves-project/nerves_examples/tree/master/hello_network#wifi-troubleshooting-tips to solve your problems.
   * Now you can connect a remote terminal to it, open a new terminal on your computer then run: `ssh -p 22 host@ip_number_from_raspberry`, e.g `ssh -p 22 host@10.0.1.46`, you will get:
-  ```
+  ```elixir
     Interactive Elixir (1.8.1) - press Ctrl+C to exit (type h() ENTER for help)
     Toolshed imported. Run h(Toolshed) for more info
     RingLogger is collecting log messages from Elixir and Linux. To see the
@@ -57,23 +57,23 @@ To start your Nerves app run these commands on a terminal with the microSD stora
 
     iex(nerves@nerves.local)1>
   ```
-  Now you are inside the shell of the Raspberry from your computer, to get the log messages wich it are returning run: `iex(nerves@nerves.local)1> RingLogger.attach`
+  * Now you are inside the shell of the Raspberry from your computer, to get the log messages wich it are returning run: `iex(nerves@nerves.local)1> RingLogger.attach`
 
 ## Burning with OTA
 
 In order to burn the firmware over-the-air you need to burn the project a first-time as descripted in https://github.com/ArielFarias/nerves_sqlite#getting-started.
 
 I recommend to create a file as script.sh in root folder of your project to execute all this steps:
-    ```bash
-    export NERVES_NETWORK_SSID=your_network_SSID
-    export NERVES_NETWORK_PSK=your_network_password
-    export MIX_TARGET=rpi3
-    export MIX_ENV=dev
-    mix deps.clean --all
-    mix deps.get
-    mix firmware
-    ./upload.sh the_raspberry_ip
-    ```
+  ```bash
+  export NERVES_NETWORK_SSID=your_network_SSID
+  export NERVES_NETWORK_PSK=your_network_password
+  export MIX_TARGET=rpi3
+  export MIX_ENV=dev
+  mix deps.clean --all
+  mix deps.get
+  mix firmware
+  ./upload.sh the_raspberry_ip
+  ```
 Then run in terminal `./script.sh`
 
 # Basic example
